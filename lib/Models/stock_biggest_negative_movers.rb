@@ -3,5 +3,5 @@ def biggest_negative_movers
     response_string = RestClient.get(url)
     response_hash = JSON.parse(response_string)
 
-    response_hash["mostGainerStock"]
+    response_hash["mostLoserStock"]
 end
