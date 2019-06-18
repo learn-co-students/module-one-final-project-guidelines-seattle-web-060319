@@ -9,7 +9,7 @@ task :console do
   Pry.start
 end
 
-task :test1 do
+task :run do
   login = UserInteraction.new
-  login.test1
+  login.run
 end
