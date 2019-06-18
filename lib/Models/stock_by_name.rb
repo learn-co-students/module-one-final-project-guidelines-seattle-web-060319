@@ -18,10 +18,16 @@ class StockByName
         company_list["symbolsList"].each do |company|
             if company["name"].include?(name)
                 return_hash[company["symbol"]] = company["name"]
-            elsif company["name"].similar(name) > 50.0
+            elsif company["name"].similar(name) >= 80.0
                 return_hash[company["symbol"]] = company["name"]
-            elsif company["symbol"].similar(name.upcase) > 75.0
-                return_hash[company["symbol"]] = company["name"]  
+            elsif company["symbol"].similar(name.upcase) >= 80.0
+                return_hash[company["symbol"]] = company["name"]
+            elsif company["name"].split(" ")[0].similar(name) >= 80.0
+                return_hash[company["symbol"]] = company["name"]
+            elsif company["name"].split(" ")[1] && company["name"].split(" ")[1].similar(name) >= 80.0
+                return_hash[company["symbol"]] = company["name"]
+            elsif company["name"].split(" ")[2] && company["name"].split(" ")[1].similar(name) >= 80.0
+                return_hash[company["symbol"]] = company["name"]
             end
 
         end
@@ -41,6 +47,24 @@ class StockByName
             end
         end
         return_array
+    end
+
+    def self.match_name_full(name)
+        name = name.titleize
+        return_hash = {}
+        company_list["symbolsList"].each do |company|
+            if company["name"].include?(name)
+                return_hash[company["symbol"]] = company["name"]
+            elsif company["name"].similar(name) > 67.0
+                return_hash[company["symbol"]] = company["name"]
+            elsif company["symbol"].similar(name.upcase) > 75.0
+                return_hash[company["symbol"]] = company["name"]
+            elsif company["name"].split(" ")[0].similar(name) > 75.0
+                return_hash[company["symbol"]] = company["name"]
+            end
+
+        end
+        return_hash
     end
 
 
