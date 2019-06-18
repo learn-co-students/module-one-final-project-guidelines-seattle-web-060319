@@ -1,3 +1,4 @@
 class Stock < ActiveRecord::Base
-    belongs_to :user through: :portfolio
+    has_many :portfolios
+    has_many :users, through: :portfolios
 end

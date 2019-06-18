@@ -1,3 +1,4 @@
 class User < ActiveRecord::Base
-  has_many :stocks through: :portfolio  
+  has_many :portfolios
+  has_many :stocks, through: :portfolios  
 end
