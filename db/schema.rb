@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 4) do
+ActiveRecord::Schema.define(version: 5) do
 
   create_table "portfolios", force: :cascade do |t|
     t.integer "user_id"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 4) do
     t.float  "price"
     t.float  "open_price"
     t.float  "previous_close_price"
-    t.float  "changes"
+    t.float  "day_change"
     t.string "sector"
   end
 
