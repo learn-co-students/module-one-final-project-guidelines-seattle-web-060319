@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 1) do
+ActiveRecord::Schema.define(version: 2) do
 
   create_table "stocks", force: :cascade do |t|
     t.string "name"
@@ -18,6 +18,11 @@ ActiveRecord::Schema.define(version: 1) do
     t.float  "price"
     t.float  "open_price"
     t.float  "previous_close_price"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string  "name"
+    t.integer "pin"
   end
 
 end
