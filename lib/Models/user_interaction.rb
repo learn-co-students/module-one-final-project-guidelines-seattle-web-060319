@@ -26,14 +26,36 @@ class UserInteraction
       puts "Please enter your pin:"
       while pin_input = STDIN.gets.chomp.to_i
         returning = User.all.find_by(pin: pin_input)
-        if returning.pin == pin_input
-          puts "Welcome back, #{returning.name}!"
-      else 
+        binding.pry
+        if !returning
+          # binding.pry
           puts "Please enter valid pin or create an account."
           puts
           puts prompt
+          # puts "Welcome back, #{returning.name}!"
+          # binding.pry
+          #put next menu here
+      else
+        puts "Welcome back, #{returning.name}!"
+          # puts "Please enter valid pin or create an account."
+          # puts
+          # puts prompt
+          binding.pry
         end
       end
+
+
+    #   if returning.pin == pin_input
+    #     # binding.pry
+    #     puts "Welcome back, #{returning.name}!"
+    #     # binding.pry
+    #     #put next menu here
+    # else
+    #     puts "Please enter valid pin or create an account."
+    #     puts
+    #     puts prompt
+    #     binding.pry
+    #   end
 
     else selection == 2
       puts "What's your name?"
@@ -42,6 +64,7 @@ class UserInteraction
       new_pin = STDIN.gets.chomp.to_i
       @user = User.create(name: user_name, pin: new_pin)
       puts "Welcome #{@user.name}!"
+      #put next menu here
     end
   end
 
