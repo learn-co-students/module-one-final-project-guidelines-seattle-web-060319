@@ -1,4 +1,4 @@
-class CreateStock < ActiveRecord[5.2]
+class CreateStocks < ActiveRecord[5.2]
     def change
         create_table :stocks do |t|
             t.string :name
