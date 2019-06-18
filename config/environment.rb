@@ -3,7 +3,8 @@ require 'pry'
 require 'colorize'
 require 'similar_text'
 require 'rest-client'
-require_relative '../lib/Models'
+require_relative '../lib/models'
+
 Bundler.require
 
 ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: 'db/development.db')
