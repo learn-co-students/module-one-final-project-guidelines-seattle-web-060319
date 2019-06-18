@@ -1,3 +1,3 @@
 class Stock < ActiveRecord::Base
-    puts test
+    belongs_to :user through: :portfolio
 end
