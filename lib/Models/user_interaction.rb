@@ -13,10 +13,11 @@ class UserInteraction
     prompt = "Type 1) to enter your pin or type or 2) to create a new account."
     puts
     puts prompt
-    selection = gets.chomp.to_i
+    selection = STDIN.gets.chomp.to_i
     if selection == 1
       puts "Please enter your pin:"
-      while pin = gets.chomp.to_i
+
+      while pin = STDIN.gets.chomp.to_i
         case pin
         when @user.pin == pin
           puts "Welcome back, #{@user.name}!"
@@ -32,9 +33,9 @@ class UserInteraction
       end
     else selection == 2
       puts "What's your name?"
-      user_name = gets.chomp
+      user_name = STDIN.gets.chomp
       puts "Please enter a 4 digit pin:"
-      new_pin = gets.chomp.to_i
+      new_pin = STDIN.gets.chomp.to_i
       @user = User.create(name: user_name, pin: new_pin)
       puts "Welcome #{@user.name}!"
     end
