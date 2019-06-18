@@ -16,6 +16,7 @@ GEM
     coderay (1.1.1)
     colorize (0.8.1)
     concurrent-ruby (1.0.5)
+    date (2.0.0)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
     http-cookie (1.0.3)
@@ -62,6 +63,7 @@ PLATFORMS
 
 DEPENDENCIES
   colorize
+  date
   pry
   require_all
   rest-client
