@@ -1,4 +1,4 @@
-class CreateStock < ActiveRecord[5.2]
+class CreateStocks < ActiveRecord::Migration[5.0]
     def change
         create_table :stocks do |t|
             t.string :name
@@ -6,5 +6,6 @@ class CreateStock < ActiveRecord[5.2]
             t.float :price
             t.float :open_price
             t.float :previous_close_price
+        end
     end
 end
