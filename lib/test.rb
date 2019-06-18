@@ -6,6 +6,8 @@ url = "https://financialmodelingprep.com/api/v3/stock/real-time-price"
 response_string = RestClient.get(url)
 response_hash = JSON.parse(response_string)
 
+"https://financialmodelingprep.com/api/v3/stock/real-time-price/AAPL"
+
 
 
 def find_price_by_symbol(symbol, hash)
