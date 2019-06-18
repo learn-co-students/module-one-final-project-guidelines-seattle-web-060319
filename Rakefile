@@ -7,10 +7,11 @@ task :console do
   Pry.start
 end
 
-desc "Migrate the database"
-  task :migrate do
-    ActiveRecord::Base.establish_connection(db_config)
-    ActiveRecord::Migrator.migrate("db/migrate/")
-    Rake::Task["db:schema"].invoke
-    puts "Database migrated."
-  end
+task :environment do
+  ENV["ACTIVE_RECORD_ENV"] ||= "development"
+  require_relative './config/environment'
+end
+
+include ActiveRecord::Tasks
+DatabaseTasks.db_dir = 'db'
+DatabaseTasks.migrations_paths = 'db/migrate'
