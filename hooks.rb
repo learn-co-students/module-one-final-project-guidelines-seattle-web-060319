@@ -6,3 +6,11 @@
 
 #Returns the stock object associated with the stock symbol given after adding it to the database
     StockFromSymbol.new(STOCK_SYMBOL)
+
+#Returns an array of the 10 biggest gainers of the day
+    biggest_positive_movers()
+
+#Returns an array of the 10 biggest losers of the day
+    biggest_negative_movers()
+
+    
