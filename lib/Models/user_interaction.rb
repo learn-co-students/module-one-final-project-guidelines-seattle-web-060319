@@ -6,12 +6,11 @@ class UserInteraction
   attr_accessor :user, :portfolio
 
   def run
-    puts "Welcome to Stock_App_Name"
+    puts "Welcome to Stock_App_Name!"
     get_input
   end
 
   def get_input
-
     prompt = "Type 1) to enter your pin or type or 2) to create a new account."
     puts
     puts prompt
@@ -26,36 +25,15 @@ class UserInteraction
       puts "Please enter your pin:"
       while pin_input = STDIN.gets.chomp.to_i
         returning = User.all.find_by(pin: pin_input)
-        binding.pry
         if !returning
-          # binding.pry
           puts "Please enter valid pin or create an account."
           puts
           puts prompt
-          # puts "Welcome back, #{returning.name}!"
-          # binding.pry
-          #put next menu here
       else
         puts "Welcome back, #{returning.name}!"
-          # puts "Please enter valid pin or create an account."
-          # puts
-          # puts prompt
-          binding.pry
+        #put next menu here
         end
       end
-
-
-    #   if returning.pin == pin_input
-    #     # binding.pry
-    #     puts "Welcome back, #{returning.name}!"
-    #     # binding.pry
-    #     #put next menu here
-    # else
-    #     puts "Please enter valid pin or create an account."
-    #     puts
-    #     puts prompt
-    #     binding.pry
-    #   end
 
     else selection == 2
       puts "What's your name?"
