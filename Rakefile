@@ -9,8 +9,7 @@ task :console do
   Pry.start
 end
 
-task :default => [:usertest]
-
-task :usertest do
-  ruby "user_interaction.rb"
+task :run do
+  login = user_interaction.new
+  login.run
 end

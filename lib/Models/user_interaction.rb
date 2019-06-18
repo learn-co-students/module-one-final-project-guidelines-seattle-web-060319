@@ -36,7 +36,7 @@ class UserInteraction
       puts "Please enter a 4 digit pin:"
       new_pin = gets.chomp.to_i
       @user = User.create(name: user_name, pin: new_pin)
-      puts "Welcome #{user_name}!"
+      puts "Welcome #{@user.name}!"
     end
   end
 
