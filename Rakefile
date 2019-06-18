@@ -9,4 +9,8 @@ task :console do
   Pry.start
 end
 
+task :default => [:usertest]
 
+task :usertest do
+  ruby "user_interaction.rb"
+end
