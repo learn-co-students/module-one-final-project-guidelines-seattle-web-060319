@@ -1,25 +1,30 @@
 require_relative '../../config/environment'
 
 
-class UserInteraction
+# class UserInteraction
+#
+#   attr_accessor :user, :portfolio
 
-  attr_accessor :user, :portfolio
+  # def run
+  #   puts "Welcome to NYSE Watch!"
+  #   get_input
+  # end
 
-  def run
+  def welcome
     puts "Welcome to NYSE Watch!"
-    get_input
   end
 
   def get_input
+    welcome
     prompt = "Type 1) to enter your pin or type or 2) to create a new account."
     puts
     puts prompt
-    selection = STDIN.gets.chomp
+    selection = STDIN.gets.chomp.to_i
 
     while selection != 1 && selection != 2
       puts "Please select an option from the main menu:"
       puts prompt
-      selection = STDIN.gets.chomp
+      selection = STDIN.gets.chomp.to_i
     end
     if selection == 1
       puts "Please enter your pin:"
@@ -39,15 +44,16 @@ class UserInteraction
       puts "What's your name?"
       user_name = STDIN.gets.chomp
       puts "Please enter a 4 digit pin:"
-      new_pin = STDIN.gets.chomp
-      while new_pin != Integer(new_pin)
-        puts "Please enter a valid pin."
-        new_pin = STDIN.gets.chomp
+      while new_pin = STDIN.gets.chomp.to_i
+        if new_pin.is_a? Integer
+          @user = User.create(name: user_name, pin: new_pin)
+          returning = User.all.find_by(pin: new_pin)
+          puts "Welcome #{returning.name}!"
+          #put next menu here
+        else
+          puts "Please enter a valid pin:"
+          new_pin = STDIN.gets.chomp
+        end
       end
-      @user = User.create(name: user_name, pin: new_pin)
-      puts "Welcome #{@user.name}!"
-      #put next menu here
     end
   end
-
-end
