@@ -13,15 +13,15 @@ def StockByName(name)
     company_list["symbolsList"].each do |company|
         if company["name"].include?(name)
             return_hash[company["symbol"]] = company["name"]
-        elsif company["name"].similar(name) >= 80.0
+        elsif company["name"].similar(name) >= 60.0
             return_hash[company["symbol"]] = company["name"]
-        elsif company["symbol"].similar(name.upcase) >= 80.0
+        elsif company["symbol"].similar(name.upcase) >= 60.0
             return_hash[company["symbol"]] = company["name"]
-        elsif company["name"].split(" ")[0].similar(name) >= 80.0
+        elsif company["name"].split(" ")[0].similar(name) >= 60.0
             return_hash[company["symbol"]] = company["name"]
-        elsif company["name"].split(" ")[1] && company["name"].split(" ")[1].similar(name) >= 80.0
+        elsif company["name"].split(" ")[1] && company["name"].split(" ")[1].similar(name) >= 60.0
             return_hash[company["symbol"]] = company["name"]
-        elsif company["name"].split(" ")[2] && company["name"].split(" ")[1].similar(name) >= 80.0
+        elsif company["name"].split(" ")[2] && company["name"].split(" ")[1].similar(name) >= 60.0
             return_hash[company["symbol"]] = company["name"]
         end
 
