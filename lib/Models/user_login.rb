@@ -1,4 +1,4 @@
-class Login
+class UserLogin
 
   def run
     system('clear')
@@ -38,7 +38,7 @@ class Login
           puts prompt
       else
         puts "Welcome back, #{returning.name}!"
-        # self.show_menu
+        show_menu
         #put next menu here
         end
       end
@@ -81,7 +81,7 @@ def show_menu
   end
 
   if selection == 1
-
+    binding.pry
     #link to user portfolio
   elsif selection == 2
     #see trending stocks
