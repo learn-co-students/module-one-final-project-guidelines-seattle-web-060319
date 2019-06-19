@@ -39,8 +39,11 @@ class UserInteraction
       puts "What's your name?"
       user_name = STDIN.gets.chomp
       puts "Please enter a 4 digit pin:"
-      new_pin = STDIN.gets.chomp.to
-      # while new_pin != Integer(new_pin)
+      new_pin = STDIN.gets.chomp
+      while new_pin != Integer(new_pin)
+        puts "Please enter a valid pin."
+        new_pin = STDIN.gets.chomp
+      end
       @user = User.create(name: user_name, pin: new_pin)
       puts "Welcome #{@user.name}!"
       #put next menu here

@@ -1,22 +1,5 @@
 require_relative '../../config/environment'
 
-class StockMenuOption
-
-  attr_accessor :user, :portfolio, :stock
-
-  def run
-    show_menu
-  end
-
-  # def menu_options
-  #   prompt = "Select an option from the list below:
-  #           1) Look at my portfolio.
-  #           2) Search stocks by name.
-  #           3) See trending stocks.
-  #           4) Exit."
-  #   puts prompt
-  # end
-
   def show_menu
     prompt = "Select an option from the list below:
             1) Look at my portfolio.
@@ -35,7 +18,7 @@ class StockMenuOption
     end
 
     if selection == 1
-      User.all.
+      binding.pry
       #link to user portfolio
     elsif selection == 2
       #see trending stocks
@@ -57,8 +40,3 @@ class StockMenuOption
 
   def exit
   end
-
-
-
-
-end
