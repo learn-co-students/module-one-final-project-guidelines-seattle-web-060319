@@ -3,6 +3,7 @@ class Login
   def run
     system('clear')
     get_input
+    show_menu
   end
 
 
@@ -28,14 +29,16 @@ class Login
     end
     if selection == 1
       puts "Please enter your pin:"
-      while pin_input = STDIN.gets.chomp
+      while pin_input = STDIN.gets.chomp.to_i
         returning = User.all.find_by(pin: pin_input)
         if !returning || pin_input != Integer(pin_input)
+          binding.pry
           puts "Please enter valid pin or create an account."
           puts
           puts prompt
       else
         puts "Welcome back, #{returning.name}!"
+        # self.show_menu
         #put next menu here
         end
       end
@@ -49,7 +52,7 @@ class Login
           @user = User.create(name: user_name, pin: new_pin)
           returning = User.all.find_by(pin: new_pin)
           puts "Welcome #{returning.name}!"
-          #put next menu here
+          #menu here
         else
           puts "Please enter a valid pin:"
           new_pin = STDIN.gets.chomp
@@ -78,7 +81,7 @@ def show_menu
   end
 
   if selection == 1
-    binding.pry
+
     #link to user portfolio
   elsif selection == 2
     #see trending stocks
