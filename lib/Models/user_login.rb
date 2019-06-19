@@ -41,6 +41,7 @@ class UserLogin
       else
         puts "Welcome back, #{returning.name}!"
         show_menu
+        #put next menu here
         end
       end
 
@@ -96,6 +97,8 @@ def show_menu
           3) See trending stocks.
           4) Exit."
     ###
+    binding.pry
+    #link to user portfolio
   elsif selection == 2
 
 

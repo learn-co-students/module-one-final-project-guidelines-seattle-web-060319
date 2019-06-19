@@ -14,6 +14,7 @@ require_relative '../lib/models/stock.rb'
 require_relative '../lib/models/symbol_validator.rb'
 require_relative '../lib/models/user_interaction.rb'
 require_relative '../lib/models/user.rb'
+require_relative '../lib/models/user_stock_research_menu.rb'
 require_relative '../lib/models/user_login.rb'
 
 ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: 'db/development.db')
