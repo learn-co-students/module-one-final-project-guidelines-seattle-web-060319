@@ -22,3 +22,6 @@
 
 #Takes in a user object, and iterates through each of the stocks in it's portfolio updating their current price
     update_portfolio_prices(USER)
+
+#Starts the menu for when user selects LOGIN>2.Research>
+    user_stock_research_menu
