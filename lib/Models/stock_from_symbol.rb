@@ -1,8 +1,4 @@
-class StockFromSymbol
-
-    attr_reader :symbol, :price, :name, :day_change, :sector, :open_price
-
-    def initialize(symbol)
+    def StockBySymbol(symbol)
         @symbol = symbol.upcase
         response_hash = stock_profile(symbol)
         Stock.create(name: @name, symbol: @symbol, price: @price, open_price: @open_price, day_change: @day_change, sector: @sector)
@@ -37,14 +33,3 @@ class StockFromSymbol
         response_hash["historical"][0]["open"]
     end
 
-
-
-
-
-
-
-
-
-
-
-end
