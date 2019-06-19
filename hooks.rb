@@ -4,7 +4,7 @@
 #Return TRUE or FALSE depending on whether the input was a valid stock symbol
     valid_symbol?(SYMBOL)
 
-#Returns the stock object associated with the stock symbol given after adding it to the database
+#Returns the stock object associated with the stock symbol given after updating or adding it to the database
     StockBySymbol(STOCK_SYMBOL)
 
 #Returns an array of the 10 biggest gainers of the day
