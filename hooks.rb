@@ -13,4 +13,6 @@
 #Returns an array of the 10 biggest losers of the day
     biggest_negative_movers()
 
-    
+#Returns hash of format below, after giving stock symbol, and number of days to go back historically
+#{"first_close"=>OLDEST DATE CLOSE VALUE, "current_close"=>CURRENT DATE CLOSE VALUE, "total_change"=> FLOAT CHANGE, "change_percent"=> FLOAT CHANGE * 100 FOR PERCENT, "change_direction"=> "UP" OR "DOWN" DEPENDING ON POSITVE GROWTH OR NEGATIVE GROWTH}
+    stock_history(symbol, num_days)
