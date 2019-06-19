@@ -10,6 +10,6 @@ task :console do
 end
 
 task :run do
-  menu = StockMenuOption.new
-  menu.run
+  login = UserInteraction.new
+  login.run
 end
