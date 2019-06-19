@@ -35,7 +35,6 @@ GEM
     rack (1.6.5)
     rack-protection (1.5.3)
       rack
-    require_all (1.3.3)
     rest-client (2.0.2)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
@@ -65,7 +64,6 @@ DEPENDENCIES
   colorize
   date
   pry
-  require_all
   rest-client
   similar_text
   sinatra-activerecord
