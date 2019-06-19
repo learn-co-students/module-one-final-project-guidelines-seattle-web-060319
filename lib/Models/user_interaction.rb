@@ -1,12 +1,11 @@
 require_relative '../../config/environment'
 
-
 class UserInteraction
 
   attr_accessor :user, :portfolio
 
   def run
-    puts "Welcome to Stock_App_Name!"
+    puts "Welcome to NYSE Watch!"
     get_input
   end
 
@@ -21,18 +20,20 @@ class UserInteraction
       puts prompt
       selection = STDIN.gets.chomp.to_i
     end
+
     if selection == 1
       puts "Please enter your pin:"
-      while pin_input = STDIN.gets.chomp.to_i
+      while pin_input = STDIN.gets.chomp
         returning = User.all.find_by(pin: pin_input)
-        if !returning
+        x = Integer(pin_input) rescue true
+        if !returning || x
           puts "Please enter valid pin or create an account."
           puts
           puts prompt
       else
         puts "Welcome back, #{returning.name}!"
         #put next menu here
-        end
+
       end
 
     else selection == 2

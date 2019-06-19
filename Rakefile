@@ -9,4 +9,7 @@ task :console do
   Pry.start
 end
 
-
+task :run do
+  menu = StockMenuOption.new
+  menu.run
+end
