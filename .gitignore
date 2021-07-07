@@ -10,4 +10,8 @@ tmp
 *.log
 *.swp
 
+
+
 db/*.db
+
+hidden.rb
